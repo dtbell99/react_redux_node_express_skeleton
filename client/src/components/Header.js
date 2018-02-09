@@ -5,7 +5,6 @@ class Header extends Component {
         return (
             <div className="Empty">
                 <h1>Header</h1>
-                <hr />
             </div>
         );
     }
