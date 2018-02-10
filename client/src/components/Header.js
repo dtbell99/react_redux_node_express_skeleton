@@ -4,7 +4,7 @@ class Header extends Component {
     render() {
         return (
             <div className="Header">
-                <h1>Header</h1>
+                <h2>react_redux_node_express_skeleton</h2>
             </div>
         );
     }

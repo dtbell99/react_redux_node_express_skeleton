@@ -4,9 +4,9 @@ class Links extends Component {
     render() {
         return (
             <div className="Links">
-                <a href="#comp1" onClick={() => this.props.navigate("comp1")}>Comp1</a>
+                <a href="#home" onClick={() => this.props.navigate("Home")}>Home</a>
                 &nbsp;|&nbsp;
-                <a href="#comp2" onClick={() => this.props.navigate("comp2")}>Comp2</a>
+                <a href="#config" onClick={() => this.props.navigate("ServerConfig")}>Server Config</a>
                 <hr />
             </div>
         );
