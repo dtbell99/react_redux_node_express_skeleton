@@ -19,7 +19,7 @@ class Navigator extends Component {
                 {this.props.loading && <LoadView />}
                 <Links navigate={this.navigate} />
                 {this.props.view === 'Home' && <Homepage />}
-                {this.props.view === 'ServerConfig' && <ServerConfig updateServerConfig={this.props.updateServerConfig} />}
+                {this.props.view === 'ServerConfig' && <ServerConfig config={this.props.config} updateServerConfig={this.props.updateServerConfig} />}
             </div>
         );
     }
@@ -27,7 +27,8 @@ class Navigator extends Component {
 
 const mapStateToProps = store => ({
     view: store.config.loadedView,
-    loading: store.config.loading
+    loading: store.config.loading,
+    config: store.config.serverConfig
 })
 
 const mapDispatchToProps = dispatch => ({

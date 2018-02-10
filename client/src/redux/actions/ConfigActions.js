@@ -17,11 +17,11 @@ export function updateServerConfig() {
         })
         try {
             const payload = await fetch(request)
-            dispatch(updateLoader(false))
             const json = await (payload.json())
             if (json) {
                 dispatch(serverConfigUpdate(json))
             }
+            dispatch(updateLoader(false))
         } catch (err) {
             console.log(err)
             dispatch(updateLoader(false))

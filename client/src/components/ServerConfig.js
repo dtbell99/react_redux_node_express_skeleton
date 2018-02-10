@@ -10,7 +10,7 @@ class ServiceConfig extends Component {
         return (
             <div className="ServerConfig">
                 <h3>Server Configuration</h3>
-
+                Server Name:{this.props.config.name}
             </div>
         );
     }
