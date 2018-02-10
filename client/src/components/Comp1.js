@@ -4,10 +4,7 @@ class Comp1 extends Component {
     render() {
         return (
             <div className="Comp1">
-                Comp1
-
-               Name: {this.props.activePost.name}
-
+                <h3>Comp1</h3>
             </div>
         );
     }

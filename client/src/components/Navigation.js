@@ -1,60 +1,33 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Comp1 from './Comp1.js'
 import Comp2 from './Comp2.js'
 import Links from './Links.js'
+import { changeView } from '../redux/actions/ConfigActions'
 
 class Navigator extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            view: "comp2",
-            posts: [
-                {
-                    id: 0,
-                    name: "post 1",
-                    detail: "post 1 detail"
-                },
-                {
-                    id: 1,
-                    name: "post 2",
-                    detail: "post 2 detail"
-                }
-            ],
-            activePost: {}
-        }
-    }
-
     navigate = (view) => {
-        this.setState({ view })
-    }
-
-    setActivePost = (id) => {
-
-        var activePost = {}
-        this.state.posts.forEach(post => {
-            if (post.id === id) {
-                activePost = post
-            }
-
-            // set that post in state here...
-            // change state view to comp1... 
-        })
-        this.setState({
-            view: "comp1",
-            activePost: activePost
-        })
+        this.props.updateView(view)
     }
 
     render() {
         return (
             <div className="Navigator">
                 <Links navigate={this.navigate} />
-                {this.state.view === 'comp1' && <Comp1 activePost={this.state.activePost} />}
-                {this.state.view === 'comp2' && <Comp2 posts={this.state.posts} setActivePost={this.setActivePost} />}
+                {this.props.view === 'comp1' && <Comp1 />}
+                {this.props.view === 'comp2' && <Comp2 />}
             </div>
         );
     }
 }
 
-export default Navigator;
+const mapStateToProps = store => ({
+    view: store.config.loadedView
+})
+
+const mapDispatchToProps = dispatch => ({
+    updateView: (view) => dispatch(changeView(view))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigator)

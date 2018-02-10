@@ -1,3 +1,7 @@
-export function updateLoader(isShowing) {
-    return {type: "UPDATE_LOADER", running:isShowing}
+export function updateLoader(showLoader) {
+    return { type: "UPDATE_LOADER", showLoader }
+}
+
+export function updateView(view) {
+    return { type: "UPDATE_VIEW", view }
 }
