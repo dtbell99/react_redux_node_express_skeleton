@@ -29,3 +29,11 @@ From the client folder run the following command:
  npm run build
  ```
  This will produce static artifacts in the client/build folder. Once the command finishes copy and paste the files (overwrite if they exist) in the public folder in the root of the project. Node/Express has been configured to host static files from the public folder so once those artifacts have been copied you can deploy the root folder and test your entire application on port 3000. 
+
+ 
+ ## UI / Design
+
+ The application has been templated for use with bootstrap 4: http://getbootstrap.com and a default CSS theme of materia found here: https://bootswatch.com. You can change this application to any bootswatch free theme by updating the name of the theme (for example change materia to lux) in the client/public/index.html file.
+ ```html
+<link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css" />
+ ```
