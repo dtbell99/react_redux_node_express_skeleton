@@ -6,6 +6,11 @@ This project was created to give you a starting point for your next react, redux
 * Install Node.js https://nodejs.org
 * Install nodemon ```npm install --save nodemon``` (if you wish not to use nodemon change the runlocalserver script to call npm start in place of nodemon start)
 
+## Setup
+* From root directory run npm install
+* From root/client directory run npm install
+** (Note: react loader calls for older versions of react in the npm install process. That library works fine with v16 in this template so please disregard.)
+
 ## Running Application
 First step is to start the server. The server will launch on port 3000. Next change directory into the client folder and run the start command below. The application was configured to use a proxy in the package.json file so the react client proxies service calls to port 3000 and the client can run on any port. 
 
